@@ -17,22 +17,37 @@ export default function Home() {
   return (
     <div className="space-y-24 pb-12">
       {/* Hero Section */}
-      <section className="pt-12 md:pt-24 max-w-3xl">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-slate-900 dark:text-zinc-100 transition-colors">
-          Hi, I'm <br />
-          <span className="text-blue-600 dark:text-emerald-400 transition-colors">Branton Wekesa.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-slate-600 dark:text-zinc-400 mb-8 leading-relaxed transition-colors">
-          I'm an undergraduate student pursuing a BSc in Actuarial Science. 
-          Passionate about data analysis, risk management, and applying statistical modeling to solve complex financial problems.
-        </p>
-        <div className="flex items-center gap-4">
-          <Link to="/portfolio" className="bg-blue-600 hover:bg-blue-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-zinc-950 px-6 py-3 rounded-full font-medium transition-colors flex items-center gap-2 shadow-sm">
-            View My Work <ArrowRight size={18} />
-          </Link>
-          <Link to="/blog" className="bg-slate-200 hover:bg-slate-300 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-900 dark:text-zinc-100 px-6 py-3 rounded-full font-medium transition-colors shadow-sm">
-            Read Blog
-          </Link>
+      <section className="pt-12 md:pt-24 flex flex-col-reverse md:flex-row items-center gap-12">
+        <div className="flex-1 max-w-3xl">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-slate-900 dark:text-zinc-100 transition-colors">
+            Hi, I'm <br />
+            <span className="text-blue-600 dark:text-emerald-400 transition-colors">Branton Wekesa.</span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-600 dark:text-zinc-400 mb-8 leading-relaxed transition-colors">
+            I'm an undergraduate student pursuing a BSc in Actuarial Science. 
+            Passionate about data analysis, risk management, and applying statistical modeling to solve complex financial problems.
+          </p>
+          <div className="flex items-center gap-4">
+            <Link to="/portfolio" className="bg-blue-600 hover:bg-blue-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-zinc-950 px-6 py-3 rounded-full font-medium transition-colors flex items-center gap-2 shadow-sm">
+              View My Work <ArrowRight size={18} />
+            </Link>
+            <Link to="/blog" className="bg-slate-200 hover:bg-slate-300 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-900 dark:text-zinc-100 px-6 py-3 rounded-full font-medium transition-colors shadow-sm">
+              Read Blog
+            </Link>
+          </div>
+        </div>
+        
+        <div className="w-48 h-48 md:w-72 md:h-72 flex-shrink-0 relative">
+          <div className="absolute inset-0 bg-blue-600/20 dark:bg-emerald-400/20 rounded-full blur-3xl"></div>
+          <img 
+            src="/profile.jpg" 
+            alt="Branton Wekesa" 
+            className="w-full h-full object-cover rounded-full border-4 border-white dark:border-zinc-900 shadow-xl relative z-10 bg-slate-200 dark:bg-zinc-800"
+            onError={(e) => {
+              // Fallback placeholder if profile.jpg is not found
+              e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop";
+            }}
+          />
         </div>
       </section>
 
